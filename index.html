@@ -17,6 +17,9 @@
       .style {
         color:orange;
       }
+      .style-rule {
+        font-style:oblique;
+      }
     </style>
   </head>
   <body>
@@ -59,6 +62,18 @@
 
         codeBlock.innerHTML = html;
         document.body.appendChild(codeBlock);
+
+        var fixCSS = function(css){
+          var toReturn = css.replace(/(.*){{1}/g,function(match){
+            return "<span class='style-rule'>"+match+"</span>";
+          });
+          return toReturn;
+        }
+
+        for (var i = 0; i < document.getElementsByClassName('style').length; i++){
+          var element = document.getElementsByClassName('style')[i];
+          element.innerHTML = fixCSS(element.innerText);
+        }
 
     </script>
   </body>
