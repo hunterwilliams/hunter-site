@@ -8,6 +8,9 @@
         margin: 50px;
         white-space: pre;
       }
+      .tag {
+        color:red;
+      }
     </style>
   </head>
   <body>
@@ -16,10 +19,15 @@
     <script>
         var html = document.documentElement.outerHTML;
         var codeBlock = document.createElement('div');
-        
+        var replacer = function(match){
+          match = match.replace("<","&lt;");
+          match = match.replace(">","&gt;");
+          return "<span class='tag'>"+match+"</span>";
+        }
+        html = html.replace(/<\/?[\w\s="':;-]*>/g,replacer);
         codeBlock.id = "code-bg";
 
-        codeBlock.innerText = html;
+        codeBlock.innerHTML = html;
         document.body.appendChild(codeBlock);
 
     </script>
