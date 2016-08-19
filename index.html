@@ -11,8 +11,11 @@
       .tag {
         color:red;
       }
-      .script, .script .tag {
+      .script {
         color:green;
+      }
+      .style {
+        color:orange;
       }
     </style>
   </head>
@@ -34,7 +37,6 @@
             return toReturn;
           }
 
-
           toReturn = "<span class='tag'>"+toReturn+"</span>";
 
           if (match.indexOf("/script") != -1){
@@ -42,6 +44,12 @@
           }
           else if (match.indexOf("script") != -1){
             toReturn += "<span class='script'>";
+          }
+          else if (match.indexOf("/style") != -1){
+            toReturn = "</span>"+toReturn;
+          }
+          else if (match.indexOf("style") != -1){
+            toReturn += "<span class='style'>";
           }
 
           return toReturn;
