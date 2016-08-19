@@ -11,6 +11,9 @@
       .tag {
         color:red;
       }
+      .script, .script .tag {
+        color:green;
+      }
     </style>
   </head>
   <body>
@@ -19,10 +22,29 @@
     <script>
         var html = document.documentElement.outerHTML;
         var codeBlock = document.createElement('div');
-        var replacer = function(match){
-          match = match.replace("<","&lt;");
-          match = match.replace(">","&gt;");
-          return "<span class='tag'>"+match+"</span>";
+        var replacer = function(match, offset, parent){
+          var toReturn = match;
+          var start = offset - 1;
+          var finish = offset+match.length;
+
+          toReturn = toReturn.replace("<","&lt;");
+          toReturn = toReturn.replace(">","&gt;");
+
+          if (parent[start] == '"' && parent[finish] == '"'){
+            return toReturn;
+          }
+
+
+          toReturn = "<span class='tag'>"+toReturn+"</span>";
+
+          if (match.indexOf("/script") != -1){
+            toReturn = "</span>"+toReturn;
+          }
+          else if (match.indexOf("script") != -1){
+            toReturn += "<span class='script'>";
+          }
+
+          return toReturn;
         }
         html = html.replace(/<\/?[\w\s="':;-]*>/g,replacer);
         codeBlock.id = "code-bg";
