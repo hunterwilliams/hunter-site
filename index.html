@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Hunter G Williams</title>
+    <style>
+      #code-bg{
+        position: absolute;
+        color: darkgrey;
+        margin: 50px;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Hello World</p>
+
+    <script>
+        var html = document.documentElement.outerHTML;
+        var codeBlock = document.createElement('div');
+        
+        codeBlock.id = "code-bg";
+
+        codeBlock.innerText = html;
+        document.body.appendChild(codeBlock);
+
+    </script>
+  </body>
+</html>
