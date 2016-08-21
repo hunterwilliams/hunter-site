@@ -2,29 +2,54 @@
   <head>
     <title>Hunter G Williams</title>
     <style>
+      #bg {
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: -100;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(320deg, rgb(101, 142, 167) 0%, rgb(131, 189, 203) 51%, rgb(217, 239, 237) 75%);
+      }
       #code-bg{
         position: absolute;
-        color: darkgrey;
-        margin: 50px;
+        color: rgb(248,209,210);
+        margin: 30px;
         white-space: pre;
+        z-index: -10;
+        top: 40px;
+        font-family: monospace;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        perspective: 1000px;
+
+      }
+      #page {
+        transform: rotateY(1deg);
       }
       .tag {
-        color:red;
+        color: rgb(244, 160, 161);
       }
       .script {
-        color:green;
+        color: rgb(160, 193, 244);
       }
       .style {
-        color:orange;
+        color: rgb(177, 160, 244);
       }
       .style-rule {
-        font-style:oblique;
+        font-style: oblique;
       }
     </style>
   </head>
   <body>
     <p>Hello World</p>
-
+    <div id="bg"></div>
     <div>
       <table>
         <tbody>
@@ -87,16 +112,16 @@
 
           toReturn = "<span class='tag'>"+toReturn+"</span>";
 
-          if (match.indexOf("/script") != 0){
+          if (match.indexOf("/script") == 1){
             toReturn = "</span>"+toReturn;
           }
-          else if (match.indexOf("script") != 0){
+          else if (match.indexOf("script") == 1){
             toReturn += "<span class='script'>";
           }
-          else if (match.indexOf("/style") != 0){
+          else if (match.indexOf("/style") == 1){
             toReturn = "</span>"+toReturn;
           }
-          else if (match.indexOf("style") != 0){
+          else if (match.indexOf("style") == 1){
             toReturn += "<span class='style'>";
           }
 
@@ -105,7 +130,7 @@
         html = html.replace(/<\/?[\w\s="':\/;\.\?-]*>/g,replacer);
         codeBlock.id = "code-bg";
 
-        codeBlock.innerHTML = html;
+        codeBlock.innerHTML = "<div id='page'>"+html+"</div>";
         document.body.appendChild(codeBlock);
 
         var fixCSS = function(css){
