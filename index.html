@@ -34,20 +34,30 @@
         font-style: oblique;
       }
       /* End of Syntax Highlighting */
-
-      /* Start of Portfolio */
-      #portfolio-section {
+      .section {
         padding-left: 0;
         padding-right: 0;
         padding-top: 0;
         padding-bottom: 1%;
         margin: 0;
-        background-color: rgba(255, 153, 0, 0.1);
       }
-      #portfolio-section h1 {
+      .section h1 {
         text-align: center;
         font-size: 60px;
         margin-top:1%;
+      }
+      #about-section {
+        background-color: rgba(0,255,196,.1);
+      }
+      #about-section p {
+        background-color: rgba(0,255,196,.58);
+      }
+      #contact-section {
+        background-color: rgba(164, 0, 255, 0.1);
+      }
+      /* Start of Portfolio */
+      #portfolio-section {
+        background-color: rgba(255, 153, 0, 0.1);
       }
       .p-row {
         background-color: rgba(255, 153, 0, 0.58);
@@ -87,7 +97,7 @@
         min-height: 50px;
       }
       .p-app-title {
-        color:white;
+        color: white;
       }
 
       .p-company:before {
@@ -149,62 +159,69 @@
   <body>
     <div id="start" class="parallax">
       <div class='parallax__layer parallax__layer--base'>
-      <h1>Hi, I'm Hunter</h1>
-      <div id="portfolio-section">
-        <h1>Portfolio</h1>
-        <div class="p-row">
-          <span class="p-year p-item">2016</span>
-          <span class="p-item">
-              <h3 class="p-app-title">Ribbeat</h3>
-              <span class="p-img"><img src="images/ribbeat.jpg" alt="Ribbeat - Divertise LLC" width="200" height="355" /></span>
+        <div id="about-section" class="section">
+          <h1>Hi, I'm Hunter</h1>
+          <p>I'm a Software Engineer</p>
+          <p></p>
+        </div>
+        <div id="portfolio-section" class="section">
+          <h1>Portfolio</h1>
+          <div class="p-row">
+            <span class="p-year p-item">2016</span>
+            <span class="p-item">
+                <h3 class="p-app-title">Ribbeat</h3>
+                <span class="p-img"><img src="images/ribbeat.jpg" alt="Ribbeat - Divertise LLC" width="200" height="355" /></span>
+                <span class="p-company">Divertise LLC</span>
+                <span class="p-platform">Android</span>
+                <a class="p-link" href="https://play.google.com/store/apps/details?id=se.divertise.FlashPop">Playstore</a>
+            </span>
+          </div>
+          <div class="p-row">
+            <span class="p-year p-item">2015</span>
+            <span class="p-item">
+              <h3 class="p-app-title">Happy Hour App Prototype</h3>
+              <span class="p-img"><img src="images/happyhour.jpg" alt="Happy Hour App" width="252" height="300" /></span>
               <span class="p-company">Divertise LLC</span>
-              <span class="p-platform">Android</span>
-              <a class="p-link" href="https://play.google.com/store/apps/details?id=se.divertise.FlashPop">Playstore</a>
-          </span>
-        </div>
-        <div class="p-row">
-          <span class="p-year p-item">2015</span>
-          <span class="p-item">
-            <h3 class="p-app-title">Happy Hour App Prototype</h3>
-            <span class="p-img"><img src="images/happyhour.jpg" alt="Happy Hour App" width="252" height="300" /></span>
-            <span class="p-company">Divertise LLC</span>
-            <span class="p-platform">Web & WebApp</span>
-          </span>
-          <span class="p-item">
-              <h3 class="p-app-title">Slush MarkLogic</h3>
-              <span class="p-img"><img src="images/marklogicslush.jpg" alt="Slush MarkLogic" width="410" height="202" /></span>
-              <span class="p-company">Contract w/Divertise LLC</span>
+              <span class="p-platform">Web & WebApp</span>
+            </span>
+            <span class="p-item">
+                <h3 class="p-app-title">Slush MarkLogic</h3>
+                <span class="p-img"><img src="images/marklogicslush.jpg" alt="Slush MarkLogic" width="410" height="202" /></span>
+                <span class="p-company">Contract w/Divertise LLC</span>
+                <span class="p-platform">Web</span>
+                <a class="p-link" href="https://github.com/marklogic/slush-marklogic-node">Github</a>
+            </span>
+          </div>
+          <div class="p-row">
+            <span class="p-year p-item">2014</span>
+            <span class="p-item">
+              <h3 class="p-app-title">Quiz Game for Client</h3>
+              <span class="p-img"><img src="images/brainteaser.png" alt="Brain Teaser Game" width="300" height="227" /></span>
+              <span class="p-company">Unnamed</span>
               <span class="p-platform">Web</span>
-              <a class="p-link" href="https://github.com/marklogic/slush-marklogic-node">Github</a>
-          </span>
+              <span class="p-link">Behind Paywall</span>
+            </span>
+            <span class="p-item">
+              <h3 class="p-app-title">TabStyles Google Chrome Plugin </a></h3>
+              <span class="p-img"><img src="images/tabstyles.jpg" alt="tabstyles" width="300" height="155" /></span>
+              <span class="p-platform">Chrome Browser</span>
+              <a class="p-link" href="https://chrome.google.com/webstore/detail/tabstyles/nbhifclijoompdklmlmieemekidkcnbf">Chrome Store</a>
+            </span>
+          </div>
+          <div class="p-row">
+            <span class="p-year p-item">2013</span>
+            <span class="p-item">
+              <h3 class="p-app-title">Lunch Lady Legends</h3>
+              <span class="p-img"><img src="images/lunchladylegends.jpg" alt="Lunch Lady Legends - SRRN Games" width="351" height="200" /></span>
+              <span class="p-company">SRRN Games</span>
+              <span class="p-platform">Web</span>
+              <a class="p-link" href="http://www.randomhousekids.com/games/lunch-lady-legends">Random House Game</a>
+            </span>
+          </div>
         </div>
-        <div class="p-row">
-          <span class="p-year p-item">2014</span>
-          <span class="p-item">
-            <h3 class="p-app-title">Quiz Game for Client</h3>
-            <span class="p-img"><img src="images/brainteaser.png" alt="Brain Teaser Game" width="300" height="227" /></span>
-            <span class="p-company">Unnamed</span>
-            <span class="p-platform">Web</span>
-            <span class="p-link">Behind Paywall</span>
-          </span>
-          <span class="p-item">
-            <h3 class="p-app-title">TabStyles Google Chrome Plugin </a></h3>
-            <span class="p-img"><img src="images/tabstyles.jpg" alt="tabstyles" width="300" height="155" /></span>
-            <span class="p-platform">Chrome Browser</span>
-            <a class="p-link" href="https://chrome.google.com/webstore/detail/tabstyles/nbhifclijoompdklmlmieemekidkcnbf">Chrome Store</a>
-          </span>
+        <div id="contact-section" class="section">
+          <h1>Want to get in touch?</h1>
         </div>
-        <div class="p-row">
-          <span class="p-year p-item">2013</span>
-          <span class="p-item">
-            <h3 class="p-app-title">Lunch Lady Legends</h3>
-            <span class="p-img"><img src="images/lunchladylegends.jpg" alt="Lunch Lady Legends - SRRN Games" width="351" height="200" /></span>
-            <span class="p-company">SRRN Games</span>
-            <span class="p-platform">Web</span>
-            <a class="p-link" href="http://www.randomhousekids.com/games/lunch-lady-legends">Random House Game</a>
-          </span>
-        </div>
-      </div>
       </div>
     </div>
     <script>
